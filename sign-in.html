@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style-signup.css">
+    <link rel="stylesheet" href="style-signin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoX Login | Sign in to the Stripe Dashboard</title>
@@ -11,6 +11,8 @@
 
     <div class="wrapper">
         <div class="container">
+            <div id="line-1" class="vertical-line"></div>
+            <div id="line-2" class="vertical-line"></div>
             <div class="nav-bar">
                 <div class="nav-name">
                     <div class="stripe-logo">TodoX</div>
@@ -34,8 +36,8 @@
                         <input class="input" type="password" name="password">
                     </div>
 
-                    <input type="checkbox">
-                    <p>Remember me on this device</p>
+                    <input id="checkbox" type="checkbox">
+                    <label style="user-select: none; cursor: pointer;" for="checkbox" >Remember me on this device</label>
                     
 
                     <button>Create account</button>
@@ -45,6 +47,9 @@
                 </div>
             </div>
         </div>
+        <a class="copyright" id="TodoX">© TodoX</a>
+        <a class="copyright" id="privacy-terms">Privacy & terms</a>
     </div>
+    
 </body>
 </html>
