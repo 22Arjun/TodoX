@@ -1,7 +1,9 @@
 @font-face {
   font-family: "Sohna";
   src: 
-       url("./fonts/Sohne-latin-basic\ \(1\).woff2") format("woff2");
+       url("./fonts/Sohne-latin-basic\ \(1\).woff2") format("woff2"),
+       url("./fonts/Sohne-latin-basic.woff2") format("woff2"),
+       url("./fonts/Sohne-minus-latin-basic.woff2") format("woff2");
        
   font-style: normal;
 }
@@ -94,7 +96,7 @@ html, body {
   width: 75px;
   font-family: Sohna, 'Inter', sans-serif;
   font-size: 26px;
-  font-weight: 800;     
+  font-weight: 700;     
   color: #ffffff;        
   letter-spacing: -1px;   
   cursor: pointer;      
@@ -124,7 +126,7 @@ html, body {
 .email-container, .password-container {
     width: 100%;
     height: 72.5px;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -140,7 +142,7 @@ html, body {
 
 span {
     display: inline-block;
-    font-weight: 600;
+    font-weight: 400;
     padding-top: 15px;
 }
 
@@ -167,7 +169,7 @@ span {
 #forgot-password-link {
     color: #635bff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     padding-left: 3px;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
@@ -207,9 +209,14 @@ span {
 
 label {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 15px; 
+    transition: font-weight 0.3s ease-in-out;
     
+}
+
+label:hover {
+    font-weight: 340;
 }
 
 button {
@@ -246,7 +253,7 @@ button:active {
     right: 5px;
     border-radius: 5px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     color: #414552;
     display: flex;
     justify-content: center;
@@ -256,7 +263,7 @@ button:active {
 #create-account-link {
     color: #635bff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     padding-left: 3px;
     cursor: pointer;
     transition: color 0.3s ease-in-out;

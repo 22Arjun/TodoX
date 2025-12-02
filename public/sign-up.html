@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up and create a TodoX account</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <link rel="shortcut icon" href="/public/TodoX | Favicon.png" type="image/x-icon">
 </head>
 <body>
     <img class="diagonal-signup" src="download (3).png" alt="">
@@ -20,26 +21,26 @@
                 <a href="http://localhost:3000/sign-in" class="stripe-logo">TodoX</a>
             </div>
         </div>
-
+    <form action="">
         <div class="create-container">
             <div class="signup-container">
                     <span>Create your TodoX account</span>
                 <div class="email-container">
-                    <div class="name">Email</div>
-                    <input class="input" type="text" name="email">
+                    <label for="email" class="name">Email</label>
+                    <input id="email" class="input" type="email" name="email" required>
                 </div>
 
                 <div class="full-name-container">
-                    <div class="name">Full name</div>
-                    <input class="input" type="text" name="full-name">
+                    <label for="full-name" class="name">Full name</label>
+                    <input id="full-name" class="input" type="text" name="full-name" required>
                 </div>
 
                 <div class="password-container">
-                    <div class="name">Password</div>
-                    <input class="input" type="password" name="password">
+                    <label for="password" class="name">Password</label>
+                    <input id="password" class="input" type="password" name="password" required>
                 </div>
 
-                <button>Create account</button>
+                <button type="submit">Create account</button>
 
                 <div class="grey">Already have an account? <a href="http://localhost:3000/sign-in" id="sign-in">Sign in</a></div>
                 
@@ -47,6 +48,7 @@
             
             
         </div>
+    </form>
 
         <a id="TodoX">© TodoX</a>
         <a id="privacy-terms">Privacy & terms</a>
