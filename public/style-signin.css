@@ -70,10 +70,24 @@ html, body {
     margin: 0px auto;
     padding: 22px 16px;
 
-    
+}
 
+#logo {
+    width: 1.9%;
+    border-radius: 2px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    
     
 }
+#logo:hover {
+    transform: scale(1.15);
+}
+
 
 .vertical-line {
     width: 1px;
@@ -233,6 +247,7 @@ button {
     cursor: pointer;
     margin-top: 32px;
     font-weight: 500;
+    transition: background-color 0.3s ease-out;
     
 
 }
@@ -289,6 +304,7 @@ button:active {
     bottom: 16px;
     color: #697386;
     cursor: pointer;
+    transition: color 0.2s ease-in, font-weight 0.2s ease-out;
 }
 
 #TodoX:hover {
@@ -304,6 +320,7 @@ button:active {
     bottom: 16px;
     color: #697386;
     cursor: pointer;
+    transition: color 0.2s ease-in, font-weight 0.2s ease-out;
 }
 
 #privacy-terms:hover {

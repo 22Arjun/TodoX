@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up and create a TodoX account</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-    <link rel="shortcut icon" href="/public/TodoX | Favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="TodoX | Favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
     <img class="diagonal-signup" src="download (3).png" alt="">
@@ -18,10 +20,11 @@
     <div class="wrapper">
         <div class="nav-bar">
             <div class="nav-name">
+                <img  id="logo" src="TodoX | Favicon.png" alt="TodoX Logo">
                 <a href="http://localhost:3000/sign-in" class="stripe-logo">TodoX</a>
             </div>
         </div>
-    <form action="">
+    <form action="" method="POST">
         <div class="create-container">
             <div class="signup-container">
                     <span>Create your TodoX account</span>
