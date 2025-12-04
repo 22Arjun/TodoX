@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
     <link rel="shortcut icon" href="TodoX | Favicon.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
+    <script src="signup.js" defer></script>
 </head>
 <body>
     <img class="diagonal-signup" src="download (3).png" alt="">
@@ -24,26 +24,26 @@
                 <a href="http://localhost:3000/sign-in" class="stripe-logo">TodoX</a>
             </div>
         </div>
-    <form action="" method="POST">
+
         <div class="create-container">
             <div class="signup-container">
                     <span>Create your TodoX account</span>
                 <div class="email-container">
                     <label for="email" class="name">Email</label>
-                    <input id="email" class="input" type="email" name="email" required>
+                    <input id="email" class="input" type="email" required>
                 </div>
 
                 <div class="full-name-container">
                     <label for="full-name" class="name">Full name</label>
-                    <input id="full-name" class="input" type="text" name="full-name" required>
+                    <input id="full-name" class="input" type="text" required>
                 </div>
 
                 <div class="password-container">
                     <label for="password" class="name">Password</label>
-                    <input id="password" class="input" type="password" name="password" required>
+                    <input id="password" class="input" type="password" required>
                 </div>
 
-                <button type="submit">Create account</button>
+                <button type="button">Create account</button>
 
                 <div class="grey">Already have an account? <a href="http://localhost:3000/sign-in" id="sign-in">Sign in</a></div>
                 
@@ -51,7 +51,7 @@
             
             
         </div>
-    </form>
+
 
         <a id="TodoX">© TodoX</a>
         <a id="privacy-terms">Privacy & terms</a>

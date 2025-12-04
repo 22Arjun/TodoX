@@ -5,7 +5,7 @@ const app = express();
 
 let users = [];
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 app.use(express.static('public'));
 
@@ -27,9 +27,9 @@ app.get('/sign-upp', (req, res) => {
 //POST Requests
 
 app.post('/sign-up', (req, res) => {
-    const email = req.body;
-    const fullName = req.body;
-    const password = req.body;
+    const email = req.body.email;
+    const fullName = req.body.fullName;
+    const password = req.body.password;
     
     const user = users.find(u => u.email === email);
 
@@ -58,7 +58,7 @@ app.post('/sign-in', (req, res) => {
         const user = users.find(u => u.email === email && u.password === password);
     
         if(!user) {
-            res.json({
+            res.status(403).json({
                 error: `Invalid email or password`
             })
         }

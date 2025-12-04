@@ -328,4 +328,10 @@ button:active {
     font-weight: 400;
 }
 
+#error {
+    color: #414552;
+    font-weight: 300;
+    
+}
+
 
