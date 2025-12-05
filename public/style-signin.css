@@ -135,6 +135,7 @@ html, body {
     line-height: 36px;
     letter-spacing: -.2px;
     color: #414552;
+    transition: height 0.3s ease-in-out;
 }
 
 .email-container, .password-container {
@@ -186,7 +187,7 @@ span {
     font-weight: 400;
     padding-left: 3px;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.1s ease-in-out;
 }
 
 #forgot-password-link:hover {
@@ -331,6 +332,38 @@ button:active {
 #error {
     color: #414552;
     font-weight: 300;
+    
+}
+
+#para {
+    font-size: 14px;
+    font-weight: 230;
+    color: #3C4257;
+    word-wrap: break-word;
+    line-height: 20px;
+    margin-top: 22px;
+
+}
+
+#returnLink {
+    color: #635bff;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 3px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    margin-left: 152px;
+    margin-top: 34px;
+
+    width: 50%;
+}
+#returnLink:hover {
+    color: black;
+}
+
+.shrinkContainer{
+    height: 49%;
     
 }
 

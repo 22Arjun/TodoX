@@ -23,6 +23,10 @@ app.get('/sign-upp', (req, res) => {
     })
 })
 
+app.get('/forgot-password', (req, res) => {
+    
+})
+
 
 //POST Requests
 
