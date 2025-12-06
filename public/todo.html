@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style-todo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoX Login | Sign in to the TodoX Dashboard</title>
+    <link rel="shortcut icon" href="TodoX | Favicon.png" type="image/x-icon">
+    <script src="todo.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <img class="diagonal-signin" src="better.png" alt="">
+    
+
+    <div class="wrapper">
+        <div class="container">
+            <div id="line-1" class="vertical-line"></div>
+            <div id="line-2" class="vertical-line"></div>
+            <div class="nav-bar">
+                <div class="nav-name">
+                    <img id="logo" src="TodoX | Favicon.png" alt="TodoX Logo">
+                    <a href="http://localhost:3000/sign-up" class="stripe-logo">TodoX</a>
+                </div>
+            </div>
+
+            <div class="create-container">
+                <div class="signup-container">
+                        <span>Orchestrate your Life</span>
+                    <div class="email-container">
+                        <label for="todo" class="name">What will you achieve today?</label>
+                        <input id="todo" class="input" type="text" name="todo" autofocus required>
+                        
+
+                    </div>
+
+
+                    
+
+                    <button type="submit">Add Task</button>
+
+                    <div class="grey">New to TodoX? <a href="http://localhost:3000/sign-up" id="create-account-link">Create Account</a></div>
+                    
+                </div>
+            </div>
+        </div>
+        <a class="copyright" id="TodoX">© TodoX</a>
+        <a class="copyright" id="privacy-terms">Privacy & terms</a>
+    </div>
+    
+</body>
+</html>

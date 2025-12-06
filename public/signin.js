@@ -41,14 +41,13 @@ buttonEl.addEventListener("click", signin);
 
 const forgotLink = () => {
     const createContainer = document.querySelector(".create-container");
-    // createContainer.style.height ="49%";
     createContainer.classList.add("shrinkContainer");
 
     createContainer.addEventListener("transitionend", () => {
         
     const span = document.querySelector("span");
-
     const para = document.createElement("p");
+
     span.innerHTML = "Reset your Password";
     document.querySelector(".password-container").remove();
     document.querySelector("#checkbox").remove();
