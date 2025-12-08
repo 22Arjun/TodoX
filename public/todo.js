@@ -1,5 +1,3 @@
-
-
 //Clicks the button if pressed enter while typing input
 
 const inputTodo = document.querySelector("#todo");
@@ -55,17 +53,7 @@ const addTodo = () => {
         
         
         
-    }, {once : true}) 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }, {once : true})    
 };
 
 
@@ -74,6 +62,7 @@ const newAddTodo = () => {
     glassContainer1.classList.add("glassBox");
     createContainer.appendChild(glassContainer1);
     glassContainer1.appendChild(pTodo);
+
     pTodo.textContent = glassContainer.value;
     glassContainer.value = "";
     

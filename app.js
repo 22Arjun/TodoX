@@ -1,14 +1,19 @@
+const mongoose = require('mongoose');
+const { userModel, todoModel } = require('./db');
+const { auth, JWT_SECRET } = require('./auth');
 const express = require('express');
 const jwt = require('jsonwebtoken');
-JWT_SECRET = "letscopyitfromherebutthatsasecret";
+
 const app = express();
 
-let users = [];
+mongoose.connect('mongodb+srv://arjun_db_user:123213@cluster0.ml3fhhi.mongodb.net/TodoX');
+
+
+//Middlewares
 app.use(express.json());
-
-
 app.use(express.static('public'));
 
+//GET Routes
 app.get('/sign-in', (req, res) => {
     res.sendFile(__dirname + '/public/sign-in.html');
 })
@@ -17,9 +22,15 @@ app.get('/sign-up', (req, res) => {
     res.sendFile(__dirname + '/public/sign-up.html');
 })
 
-app.get('/sign-upp', (req, res) => {
+app.get('/todox', (req, res) => {
+    res.sendFile(__dirname + "/public/todo.html");    
+})
+
+app.get('/', async (req, res) => {
+
+    const response = await userModel.find({});
     res.json({
-        users: users
+        users: response
     })
 })
 
@@ -28,20 +39,24 @@ app.get('/forgot-password', (req, res) => {
 })
 
 
-//POST Requests
+//POST Routes
 
-app.post('/sign-up', (req, res) => {
+app.post('/sign-up', async (req, res) => {
     const email = req.body.email;
     const fullName = req.body.fullName;
     const password = req.body.password;
     
-    const user = users.find(u => u.email === email);
+    try {
+        const response = await userModel.findOne({
+        email: email
+    })
 
-    if(!user) {
-    users.push({
+    if(!response) {
+    await userModel.create({
         email: email, 
         fullName: fullName,
-        password: password
+        password: password,
+    
     })
 
     res.send({
@@ -52,60 +67,83 @@ app.post('/sign-up', (req, res) => {
         res.status(403).json({
             message: "you are already signed up. Please Sign in"        })
     }
+    }
+    catch {
+        res.status(500).send({
+            error: "Something went wrong"
+        })
+    }
 
 })
 
-app.post('/sign-in', (req, res) => {
+app.post('/sign-in', async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-        const user = users.find(u => u.email === email && u.password === password);
-    
-        if(!user) {
+    try {
+        const response = await userModel.findOne({
+            email: email
+        })
+
+        if(!response) {
             res.status(403).json({
-                error: `Invalid email or password`
+                error: "Invalid Email"
             })
         }
         else {
-                const token = jwt.sign({
-                    email: email
+
+            if(response.password === password) {
+                const authorization = jwt.sign({
+                id: response._id.toString()
                 }, JWT_SECRET);
 
-                res.header("token", token);
-
-                res.json({
-                    token
-                });
+                res.status(200).send({
+                    authorization
+                })
+            }
+            else {
+                res.status(403).json({
+                    error: "Invalid Users Password"
+                })
+            }
             
         }
+    }
+    catch {
+        res.status(500).send({
+            error: "Something went wrong"
+        })
+    }
+        
 })
 
-const auth =  (req, res, next) => {
-    const token = req.headers.token;
 
-    decoded_token = jwt.verify(token, JWT_SECRET);
+
+app.post('/todo', auth, async (req, res) => {
+
+    userId = req.userId;
+    const userEmail = req.email;
+    const title = "namaste buddy";
+
+
+    try {
+        const response = await todoModel.create({
+            title,
+            userId
+
+        })  
+
     
-    if(decoded_token.email) {
-        req.email = decoded_token.email;
-        next();
-    }
-    else {
-        res.json({
-            error: "You are not signed in"
-        })
-    }
-}
-
-app.get('/me', auth, (req, res) => {
-    
-
-        const user = users.find(u => u.email === req.email);
-
         res.send({
-            fullName: user.fullName
+            response
         })
 
-    })
-
+    }
+    catch {
+        res.status(500).json({
+            error: "Something went wrong"
+        })
+    }
+});
 
 app.listen(3000);
