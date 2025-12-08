@@ -1,12 +1,14 @@
+const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const { userModel, todoModel } = require('./db');
 const { auth, JWT_SECRET } = require('./auth');
 const express = require('express');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const app = express();
 
-mongoose.connect('mongodb+srv://arjun_db_user:123213@cluster0.ml3fhhi.mongodb.net/TodoX');
+mongoose.connect(process.env.MONGO_URI);
 
 
 //Middlewares
@@ -51,11 +53,14 @@ app.post('/sign-up', async (req, res) => {
         email: email
     })
 
+    
     if(!response) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     await userModel.create({
         email: email, 
         fullName: fullName,
-        password: password,
+        password: hashedPassword,
     
     })
 
@@ -91,8 +96,8 @@ app.post('/sign-in', async (req, res) => {
             })
         }
         else {
-
-            if(response.password === password) {
+            ;
+            if(await bcrypt.compare(password, response.password)) {
                 const authorization = jwt.sign({
                 id: response._id.toString()
                 }, JWT_SECRET);

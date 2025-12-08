@@ -1,5 +1,5 @@
-JWT_SECRET = "letscopyitfromherebutthatsasecret";
 const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET;
 
 
 const auth = async (req, res, next) => {
