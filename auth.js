@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET;
+const secret = process.env.JWT_SECRET;
 
 
 const auth = async (req, res, next) => {
-    const authorization = req.headers.authorization;
+    const authentication = req.headers.authentication;
 
-    const decodedId = jwt.verify(authorization, JWT_SECRET);
+    const decodedId = jwt.verify(authentication, secret);
 
     if(decodedId.id) {
         req.userId = decodedId.id;
@@ -19,6 +19,6 @@ const auth = async (req, res, next) => {
 }
 
 module.exports = {
-    JWT_SECRET,
+    secret,
     auth
 }

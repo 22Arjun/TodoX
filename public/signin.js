@@ -12,22 +12,28 @@ const signin = async () => {
     }
 
     try {
-        const response = await axios.post("http://localhost:3000/sign-in", {
+        const response = await axios.post("http://localhost:3000/api/v1/user/sign-in", {
         email,
         password
     })
-    localStorage.setItem("token", response.data.token);
-
-    alert("you are signed on!")
+    localStorage.setItem("authentication", response.data.authentication);
+    
+    alert("you are logged in!")
+    
+    if(response.data) {
+        window.location.href = "api/v1/user/todox"
+    }
     }
 
     catch(error) {
         const errorDiv = document.createElement("div");
         const greyDiv = document.querySelector(".grey");
         errorDiv.setAttribute("id", "error");
+        errorDiv.style.color = "red";
         greyDiv.innerHTML = "";
         
-        errorDiv.innerHTML = "You have not signed up.<a href='http://localhost:3000/sign-up' id='create-account-link'>Create Account</a>"
+        
+        errorDiv.innerHTML = "You haven't signed up yet<a href='http://localhost:3000/api/v1/user/sign-up' id='create-account-link' style='padding-left: 5px;' >Create Account</a>"
         greyDiv.appendChild(errorDiv);
 
 
@@ -73,7 +79,7 @@ const forgotLink = () => {
     const returnLink = document.createElement("a");
     returnLink.innerHTML = "Return to sign in";
     returnLink.setAttribute("id", "returnLink");
-    returnLink.setAttribute("href", "http://localhost:3000/sign-in");
+    returnLink.setAttribute("href", "http://localhost:3000/api/v1/user/sign-in");
     signupContainer.appendChild(returnLink);
 
     }, {once : true});

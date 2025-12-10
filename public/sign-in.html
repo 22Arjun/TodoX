@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <link rel="stylesheet" href="style-signin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
             <div class="nav-bar">
                 <div class="nav-name">
                     <img id="logo" src="TodoX | Favicon.png" alt="TodoX Logo">
-                    <a href="http://localhost:3000/sign-up" class="stripe-logo">TodoX</a>
+                    <a href="http://localhost:3000/api/v1/user/sign-up" class="stripe-logo">TodoX</a>
                 </div>
             </div>
 
@@ -48,7 +49,7 @@
 
                     <button type="submit">Sign in</button>
 
-                    <div class="grey">New to TodoX? <a href="http://localhost:3000/sign-up" id="create-account-link">Create Account</a></div>
+                    <div class="grey">New to TodoX? <a href="http://localhost:3000/api/v1/user/sign-up" id="create-account-link">Create Account</a></div>
                     
                 </div>
             </div>
