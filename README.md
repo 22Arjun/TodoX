@@ -14,10 +14,17 @@ TodoX is a modern productivity application that allows users to securely manage 
 
 ## 📸 Screenshots
 
-| Login Interface | User Dashboard | Mobile View |
-|:---:|:---:|:---:|
-| ![Signup Page](./public/screenshots/signup.png) | ![Login Page](./public/screenshots/signin.png) | ![Dashboard](./public/screenshots/main.png) | ![TodoX](./public/screenshots/todo.png) |
-| *Secure Authentication* | *Task Management* | *Fully Responsive* |
+## 📸 Screenshots
+
+| **Login Interface** | **User Dashboard** |
+|:---:|:---:|
+| ![Login Page](./public/screenshots/login.png) | ![Dashboard](./public/screenshots/dashboard.png) |
+| *Secure Authentication* | *Manage your tasks efficiently* |
+
+| **Sign Up Interface** | **Todos** |
+|:---:|:---:|
+| ![Sign Up](./public/screenshots/signup.png) | ![Todos](./public/screenshots/mobile.png) |
+| *Easy User Registration* | *Fully dynamic workflow* |
 
 
 ---
@@ -136,6 +143,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Arjun Singh Bhadauriya**
 
 * [**GitHub Profile**](https://github.com/22Arjun)
+* [**X Profile**] (https://x.com/ArjunSBhadoriya)
 * [**LinkedIn Profile**](https://linkedin.com/in/arjun-singh-bhadauriya)
 * [**Email**](mailto:arjun22august@gmail.com)
 
