@@ -18,12 +18,12 @@ TodoX is a modern productivity application that allows users to securely manage 
 
 | **Login Interface** | **User Dashboard** |
 |:---:|:---:|
-| ![Login Page](./public/screenshots/login.png) | ![Dashboard](./public/screenshots/dashboard.png) |
+| ![Login Page](./public/screenshots/signin.png) | ![Dashboard](./public/screenshots/main.png) |
 | *Secure Authentication* | *Manage your tasks efficiently* |
 
 | **Sign Up Interface** | **Todos** |
 |:---:|:---:|
-| ![Sign Up](./public/screenshots/signup.png) | ![Todos](./public/screenshots/mobile.png) |
+| ![Sign Up](./public/screenshots/signup.png) | ![Todos](./public/screenshots/todo.png) |
 | *Easy User Registration* | *Fully dynamic workflow* |
 
 
