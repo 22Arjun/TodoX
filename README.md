@@ -141,7 +141,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Arjun Singh Bhadauriya**
 
 * [**GitHub Profile**](https://github.com/22Arjun)
-* [**X Profile**] (https://x.com/ArjunSBhadoriya)
+* [**X Profile**](https://x.com/ArjunSBhadoriya)
 * [**LinkedIn Profile**](https://linkedin.com/in/arjun-singh-bhadauriya)
 * [**Email**](mailto:arjun22august@gmail.com)
 
